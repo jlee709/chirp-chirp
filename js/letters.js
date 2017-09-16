@@ -13,13 +13,30 @@ var counter = {
   "q" : 0,  "r" : 0,  "s" : 0,  "t" : 0,
   "u" : 0,  "v" : 0,  "w" : 0,  "x" : 0,
   "y" : 0,  "z" : 0
-}
-
+};
+// needs base case and needs to change each time.
 function countLetters(counter, sample_text){
-  // FIX ME
+  // Base Case
+  if (!sample_text.length) return counter;
+  if (sample_text[0] === ' '){
+    sample_text = sample_text.slice(1);
+  }
+  // accounts for capitol letters and a key since its ana object. 
+  var letter = sample_text[0].toLowerCase();
+  // mutation occurs here. 
+  if (counter.hasOwnProperty(letter)){
+    counter[letter]++;
+  }
+  // where recursion initiates into the function body
+  return countLetters(counter, sample_text.slice(1));
 }
 
 $(document).ready(function(){
   countLetters(counter, sample_text);
   $("#result").html(JSON.stringify(counter));
 });
+
+// how does the test run the code.
+
+
+

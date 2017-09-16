@@ -19,6 +19,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
       "y" : 0,  "z" : 0
     };
     
+    countLetters(counter, sample_text);  // was missing from test needed to add to pass.
     expect(counter["a"]).toBe(29);
   });
 
